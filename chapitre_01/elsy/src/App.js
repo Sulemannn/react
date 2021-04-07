@@ -2,7 +2,7 @@ import React from "react";
 import './App.css';
 
 const tempMin = -20;
-const tempMiax = 40;
+const tempMax = 40;
 const heartMin = 80;
 const heartMax = 180;
 const stepsMin = 0;
