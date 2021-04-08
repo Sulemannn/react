@@ -3,21 +3,16 @@ import React from "react";
 
 class Steps extends React.Component {
 
-    render() {
-        return (
-          <div className="container-fluid">
-            <div className="row">
-    
-              <p>Heart : {(heartMin)}</p>
-              <p>Temperature : {(tempMin)}</p>
-              <p>Steps : {(stepsMin)}</p>
-    
-            </div>
-            
+  render() {
+    return (
+     
+          <div className="box col-sm-3 col-6">
+            <i style={{ fontSize: 100, color: "black" }}>directions_walk</i>
           </div>
-        );
-      }
 
+    
+    );
+  }
 }
 
 export default Steps;
