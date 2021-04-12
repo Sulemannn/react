@@ -11,7 +11,6 @@ class Box extends React.Component {
         <span class="material-icons" style={{fontSize:"100", color: this.props.color }}>{this.props.icon}</span>
         <p>{this.props.value} {this.props.unit}</p>
 
-
       </div>
 
 
