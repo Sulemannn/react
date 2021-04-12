@@ -1,5 +1,4 @@
 import React from "react";
-import './App.css';
 import './styles/global.css'
 
 import Box from './components/Box.jsx'
@@ -19,7 +18,7 @@ class App extends React.Component {
     super();
     this.state = {
       water: 0,
-      heart: 20,
+      heart: 120,
       temperature: -10,
       steps: 3000
 
