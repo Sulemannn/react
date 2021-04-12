@@ -13,6 +13,10 @@ class Box extends React.Component {
 
       </div>
 
+      if (this.props.icon == this.props.local_drink)
+
+
+
 
     );
   }
