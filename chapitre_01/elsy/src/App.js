@@ -22,9 +22,18 @@ class App extends React.Component {
       temperature: -10,
       steps: 3000
 
-      
+
     };
+
+    this.onHeartChange = this.onHeartChange.bind(this)
+
   }
+
+    onHeartChange(e) {
+      this.setState({ heart: e.target.value })
+    }
+
+
 
   render() {
     return (
@@ -42,7 +51,8 @@ class App extends React.Component {
           <Box icon="directions_walk" color="black" value={3000} unit="steps"></Box >
 
           {/* Heart */}
-          <Box icon="favorite" color="red" value={120} unit="bpm"></Box >
+          <Box icon="favorite" color="red" value={120} unit="bpm"
+            min={this.heartMin} max={this.heartMax} onHeartChange={this.onHeartChange} ></Box >
 
           {/* Temperature */}
           <Box icon="wb_sunny" color="yellow" value={-10} unit="°C"></Box >
