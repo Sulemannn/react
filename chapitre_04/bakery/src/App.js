@@ -12,10 +12,12 @@ class App extends React.Component {
     super(props)
 
     this.state = {
-      // activeTab: add,
-      // items: []
+      activeTab: "add",
+      items: []
     }
   }
+
+
 
   render() {
     return (
@@ -26,7 +28,10 @@ class App extends React.Component {
           <Add />
           <List />
           <Pay />
-          <Button />
+
+          {/* <Button Add={this.props.children}/>
+          <Button List={this.props.children}/>
+          <Button Pay={this.rops.children}/> */}
 
         </div>
       </div>
