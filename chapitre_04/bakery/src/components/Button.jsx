@@ -8,9 +8,9 @@ class Button extends React.Component {
 
             <div>
 
-                {this.props.isSelected}
-                {this.props.onClick}
-                {this.props.children}
+                <button onClick={this.props.onClickFunc} className={this.props.isSelected}>
+                    {this.props.children}
+                </button>
 
             </div>
         )
