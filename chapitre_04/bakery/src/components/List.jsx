@@ -2,14 +2,16 @@ import React from 'react'
 
 class List extends React.Component {
 
-    render () {
+    render() {
+
         return (
+
             <div>
-                List.jsx
+                {/* <p>List</p> */}
             </div>
         )
     }
 
 }
 
-export default List
+export default List;

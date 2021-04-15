@@ -1,15 +1,15 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Add from './components/Add'
+import List from './components/List'
+import Pay from './components/Pay'
+import Button from './components/Button'
 
-import Add from './components/Add.jsx'
-import List from './components/List.jsx'
-import Pay from './components/Pay.jsx'
-import Button from './components/Button.jsx'
 
 class App extends React.Component {
 
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
 
     this.state = {
       activeTab: "add",
@@ -22,16 +22,23 @@ class App extends React.Component {
   render() {
     return (
 
-      <div className="container-fluid">
-        <div className="row">
+      <div className="container d-flex justify-content-center">
+        <div className="d-flex flex-column" style={{ width: 600 }}>
 
-          <Add />
-          <List />
-          <Pay />
 
-          {/* <Button Add={this.props.children}/>
-          <Button List={this.props.children}/>
-          <Button Pay={this.rops.children}/> */}
+          <h1 className="h1" style={{ textAlign: "center" }}>Bakery</h1>
+          <div className="d-flex flex-row justify-content-start">
+
+            <Button isSelected={this.state.activeTab}>Add</Button>
+            <Button isSelected={this.state.activeTab}>List</Button>
+            <Button isSelected={this.state.activeTab}>Pay</Button>
+
+            <Add></Add>
+            <List></List>
+            <Pay></Pay>
+
+          </div>
+
 
         </div>
       </div>

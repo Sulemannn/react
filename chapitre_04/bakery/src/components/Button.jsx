@@ -2,16 +2,21 @@ import React from 'react'
 
 class Button extends React.Component {
 
-    render () {
+    render() {
+
         return (
+
             <div>
-                {/* {this.props.isSelected}
+
+                {this.props.isSelected}
                 {this.props.onClick}
-                {this.props.children} */}
+                {this.props.children}
+
             </div>
         )
     }
 
 }
 
-export default Button
+
+export default Button;

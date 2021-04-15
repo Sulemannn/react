@@ -2,14 +2,26 @@ import React from 'react'
 
 class Add extends React.Component {
 
-    render () {
+    constructor() {
+        super()
+
+        this.state = {
+            activeTab: "add",
+            items: []
+        }
+    }
+
+    render() {
+        
         return (
+
             <div>
-                Add.jsx
+                {/* <p>Add</p> */}
             </div>
         )
     }
 
 }
 
-export default Add
+
+export default Add;
