@@ -4,6 +4,7 @@ import Add from './components/Add'
 import List from './components/List'
 import Pay from './components/Pay'
 import Button from './components/Button'
+import './components/bakery.css'
 
 
 class App extends React.Component {
@@ -23,22 +24,44 @@ class App extends React.Component {
 
   selectAdd() {
 
-    this.setState({ activeTab: 'add' 
-  
-  })
+    this.setState({ activeTab: "add" })
   }
 
   selectList() {
 
-    this.setState({ activeTab: 'list' })
+    this.setState({ activeTab: "list" })
   }
 
   selectPay() {
 
 
-    this.setState({ activeTab: 'pay' })
+    this.setState({ activeTab: "pay" })
   }
 
+  renderTab() {
+
+    if (this.state.activeTab === "add") {
+      return (
+        <section>
+          <Add/>
+        </section>
+      )
+
+    } else if (this.state.activeTab === "list") {
+      return (
+        <section>
+      <List />
+        </section>
+        )
+
+    } else if (this.state.activeTab === "pay") {
+      return (
+        <section>
+      <Pay />
+        </section>
+      )
+    }
+  }
 
   render() {
     return (
@@ -54,22 +77,12 @@ class App extends React.Component {
             <Button isSelected={this.state.activeTab === "list" ? "btn btn-primary" : "btn btn-light"} onClick={this.selectList} >List</Button>
             <Button isSelected={this.state.activeTab === "pay" ? "btn btn-primary" : "btn btn-light"} onClick={this.selectPay} >Pay</Button>
 
-            <div className="row">
-              <div className="col">
-
-                <Add>eeeee</Add>
-                <List>list</List>
-                <Pay>pay</Pay>
-
-              </div>
-            </div>
-
           </div>
 
+          {this.renderTab()}
 
         </div>
       </div>
-
 
     );
   }
