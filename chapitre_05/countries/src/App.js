@@ -1,6 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from "./component/Button";
+import Button from "./component/Button.jsx";
+import Card from "./component/Card.jsx";
 
 class App extends React.Component {
 
@@ -51,16 +52,16 @@ class App extends React.Component {
       )
   }
 
-  // renderButton() {
+  renderButton() {
 
-  //   return (
-  //     <div>
-  //       <Button onClick={this.getCountry}>France</Button>
-  //       <Button onClick={this.getCountry}>Brazil</Button>
-  //       <Button onClick={this.getCountry}>Croatia</Button>
-  //     </div>
-  //   )
-  // }
+    return (
+      <div style={{ textAlign: 'center' }}>
+        <Button onClick={this.getCountry}>France</Button>
+        <Button onClick={this.getCountry}>Brazil</Button>
+        <Button onClick={this.getCountry}>Croatia</Button>
+      </div>
+    )
+  }
 
   render() {
 
@@ -68,19 +69,16 @@ class App extends React.Component {
 
       <div>
 
-        <h1>Country Selector</h1>
+        <h1 style={{ textAlign: 'center' }}>Country selector</h1>
+        {this.renderButton()}
 
-        <Button onClick={this.getCountry}>France</Button>
-        <Button onClick={this.getCountry}>Brazil</Button>
-        <Button onClick={this.getCountry}>Croatia</Button><br />
-
-        <p>Name: {this.state.name}</p>
-        <p>Capital: {this.state.capital}</p>
-        <p>Flag : <img className="img" src={this.state.flag} style={{ width: "50px" }} alt="countries flag"></img></p>
-        <p>Population: {this.state.population}</p>
-        <p>Region: {this.state.region}</p>
-
-        {/* {this.renderButton()} */}
+        <Card
+          flag={this.state.flag}
+          name={this.state.name}
+          capital={this.state.capital}
+          region={this.state.region}
+          population={this.state.population}
+        />
 
       </div>
 
