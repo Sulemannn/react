@@ -55,7 +55,9 @@ class App extends React.Component {
   renderButton() {
 
     return (
+      
       <div style={{ textAlign: 'center' }}>
+
         <Button onClick={this.getCountry}>France</Button>
         <Button onClick={this.getCountry}>Brazil</Button>
         <Button onClick={this.getCountry}>Croatia</Button>
@@ -72,7 +74,8 @@ class App extends React.Component {
         <h1 style={{ textAlign: 'center' }}>Country selector</h1>
         {this.renderButton()}
 
-        <Card
+        <Card 
+
           flag={this.state.flag}
           name={this.state.name}
           capital={this.state.capital}
