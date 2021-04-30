@@ -5,21 +5,21 @@ class Card extends React.Component {
     render() {
 
         return (
-            <div class="border mx-2 px-6" >
-                <div style={{ textAlign: 'center' }}>
-                    <img style={{
-                        width: 180,
+
+            <div className="border rounded">
+                <div style={{ textAlign: "center"}}>
+                    <img class="mx-auto d-block" style={{
+                        width: "180px",
                         borderTopLeftRadius: 4,
-                        borderTopRightRadius: 4 }} 
-                        src={this.props.flag} 
+                        borderTopRightRadius: 4
+                    }}
+                        src={this.props.flag}
                         alt="countries flag" />
-                    {/* On saute 2 lignes avec les </br> pour l'alignement */}
                     <br />
-                    <br />
-                    <p style={{ fontWeight: 600, fontSize: 19 }}>Country: <br /> {this.props.name}</p>
-                    <p style={{ fontWeight: 500, fontSize: 17 }}>Capital: {this.props.capital}</p>
-                    <p style={{ fontWeight: 450, fontSize: 17 }}>Region: <br /> {this.props.region}</p>
-                    <p class="bi bi-people-fill" style={{ fontWeight: 450, fontSize: 17 }}>Population: <br /> {this.props.population}</p>
+                    <p style={{ fontWeight: 650, fontSize: 20 }}>Country: <br /> {this.props.name}</p>
+                    <p style={{ fontWeight: 600, fontSize: 19 }}>Capital: {this.props.capital}</p>
+                    <p style={{ fontWeight: 500, fontSize: 18 }}>Region: <br /> {this.props.region}</p>
+                    <p style={{ fontWeight: 500, fontSize: 18 }}>Population: <br /> {this.props.population}</p>
                 </div>
             </div>
 
