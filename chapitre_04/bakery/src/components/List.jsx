@@ -1,17 +1,14 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-class List extends React.Component {
-
+class List extends Component {
     render() {
-
         return (
-
-            <div>
-                <p>List</p>
-            </div>
+            <ul>
+                {this.props.listItems.map(curr => {
+                    return ( <li>{curr.name} - {curr.price} </li>)
+                })}
+            </ul>
         )
     }
-
 }
-
 export default List;

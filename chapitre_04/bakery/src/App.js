@@ -1,91 +1,82 @@
-import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Add from './components/Add'
-import List from './components/List'
-import Pay from './components/Pay'
-import Button from './components/Button'
-import './components/bakery.css'
-
+import React from 'react';
+import Button from './components/Button';
+import Add from './components/Add';
+import List from './components/List';
+import Pay from './components/Pay';
+import "bootstrap/dist/css/bootstrap.min.css"
 
 class App extends React.Component {
 
   constructor() {
-    super()
-
+    super();
     this.state = {
-      activeTab: "add",
+      activeTabs: 'add',
       items: []
     }
-
     this.selectAdd = this.selectAdd.bind(this)
     this.selectList = this.selectList.bind(this)
     this.selectPay = this.selectPay.bind(this)
+    this.add = this.add.bind(this)
   }
 
-  selectAdd() {
-
-    this.setState({ activeTab: "add" })
+  selectAdd(e) {
+    console.log(e)
+    this.setState({
+      activeTabs: 'add'
+    })
   }
 
   selectList() {
-
-    this.setState({ activeTab: "list" })
+    this.setState({
+      activeTabs: 'list'
+    })
   }
 
   selectPay() {
-
-
-    this.setState({ activeTab: "pay" })
+    this.setState({
+      activeTabs: 'pay'
+    })
   }
 
-  renderTab() {
+  add(name, price) {
+    const obj = {
+      name: name,
+      price: price
+    }
+    const newList = this.state.items
+    newList.push(obj)
+    this.setState({
+      items: newList
+    })
+  }
 
-    if (this.state.activeTab === "add") {
-      return (
-        <section>
-          <Add/>
-        </section>
-      )
-
-    } else if (this.state.activeTab === "list") {
-      return (
-        <section>
-      <List />
-        </section>
-        )
-
-    } else if (this.state.activeTab === "pay") {
-      return (
-        <section>
-      <Pay />
-        </section>
-      )
+  renderContent = () => {
+    switch (this.state.activeTabs) {
+      case 'add':
+        return <Add addItem={this.add}></Add>
+      case 'list':
+        return <List listItems={this.state.items}></List>
+      case 'pay':
+        return <Pay></Pay>
     }
   }
 
   render() {
     return (
 
-      <div className="container d-flex justify-content-center ">
-        <div className="d-flex flex-column" style={{ width: 600 }}>
+      <div>
+        <h1 style={{ textAlign: "center" }}>Bakery</h1>
+        <div className="d-flex flex-row justify-content-start m-4">
 
-
-          <h1 className="h1" style={{ textAlign: "center" }}>Bakery</h1>
-          <div className="d-flex flex-row justify-content-start">
-
-            <Button isSelected={this.state.activeTab === "add" ? "btn btn-primary" : "btn btn-light"} onClick={this.selectAdd} >Add</Button>
-            <Button isSelected={this.state.activeTab === "list" ? "btn btn-primary" : "btn btn-light"} onClick={this.selectList} >List</Button>
-            <Button isSelected={this.state.activeTab === "pay" ? "btn btn-primary" : "btn btn-light"} onClick={this.selectPay} >Pay</Button>
-
-          </div>
-
-          {this.renderTab()}
-
+          <Button onClick={this.selectAdd} isSelected={this.state.activeTabs === 'add' ? true : false}> Add </Button>
+          <Button onClick={this.selectList} isSelected={this.state.activeTabs === 'list' ? true : false}> List </Button>
+          <Button onClick={this.selectPay} isSelected={this.state.activeTabs === 'pay' ? true : false}> Pay </Button>
         </div>
-      </div>
 
+        {this.renderContent()}
+      </div>
     );
   }
 }
 
-export default App
+export default App;
