@@ -34,19 +34,18 @@ class Add extends Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="row">
-                    <input type="text" placeholder="Item" className="col-10" onChange={this.updateProductName}></input>
-                    <button type="button" className="btn btn-primary col-2" onClick={this.click}>Add</button>
-                </div>
-                <div className="row">
+            <div className="d-flex flex-column align-items-center">
+
+                <div className="mb-3" style={{ width: '90%' }}>
+                    <div className="row">
+                        <input type="text" placeholder="Item" className="col-10" onChange={this.updateProductName}></input>
+                        <button type="button" className="btn btn-primary col-2" onClick={this.click}>Add</button>
+                    </div>
 
                     <span>{this.state.price} €</span>
-
-                    <div className="pt-3" style={{ width: "100%" }}>
-                        <input style={{ width: "100%" }} type="range" value={this.state.price} onChange={this.updatePrice} min="1" max="10"></input>
-                    </div>
                 </div>
+
+                <input style={{ width: "95%" }} type="range" value={this.state.price} onChange={this.updatePrice} min="1" max="10"></input>
             </div>
         )
     }
