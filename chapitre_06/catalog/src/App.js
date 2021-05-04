@@ -1,13 +1,49 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import List from './components/List'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-class App extends Component {
-  render() {
-    return (
+
+export default function App() {
+  return (
+    <Router>
       <div>
-        <h1>Catalog</h1>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Accueil</Link>
+            </li>
+            <li>
+              <Link to="/catalog">Catalog</Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/catalog">
+            <Catalog />
+          </Route>
+
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
       </div>
-    );
-  }
+    </Router>
+  );
 }
 
-export default App;
+function Home() {
+  return <List></List>
+}
+
+function Catalog() {
+  return <h2>Catalog</h2>;
+}
+
