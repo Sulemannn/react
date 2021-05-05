@@ -1,49 +1,38 @@
 import React, { Component } from 'react'
-import List from './components/List'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import movies from './movies.json'
+import Accueil from './Pages/Accueil'
+import Movie from './Pages/Movie'
 
 
-export default function App() {
-  return (
-    <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Accueil</Link>
-            </li>
-            <li>
-              <Link to="/catalog">Catalog</Link>
-            </li>
-          </ul>
-        </nav>
+export class App extends Component {
+  render() {
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
+    return (
+
+      <BrowserRouter>
+
+        <div>
+
+          <h1>Movies</h1>
+
+          {/* {movies} */}
+
+          <Accueil />
+
+        </div>
+
         <Switch>
-          <Route path="/catalog">
-            <Catalog />
-          </Route>
 
-          <Route path="/">
-            <Home />
-          </Route>
+          <Route path='/:id' exact component={Movie}></Route>
+
         </Switch>
-      </div>
-    </Router>
-  );
+
+
+
+      </BrowserRouter>
+    )
+  }
 }
 
-function Home() {
-  return <List></List>
-}
-
-function Catalog() {
-  return <h2>Catalog</h2>;
-}
-
+export default App
