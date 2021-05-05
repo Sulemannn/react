@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from './views/Home'
+import Weekly from './views/Weekly'
+import WeeklyBattle from './views/WeeklyBattle'
+import Popular from './views/Popular'
+import PopularBattle from './views/PopularBattle'
+import Favorites from './views/Favorites'
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import PageNotFound from './PageNotFound'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  render() {
+
+    return (
+      <BrowserRouter>
+
+        <div>
+          <nav>
+            <ul>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/weekly">Weekly</Link></li>
+              <li><Link to="/weekly-battle">WeeklyBattle</Link></li>
+              <li><Link to="/popular">Popular</Link></li>
+              <li><Link to="/popular-battle">Popular Battle</Link></li>
+              <li><Link to="/favorites">Favorites</Link></li>
+
+            </ul>
+          </nav>
+        </div>
+
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/weekly" exact component={Weekly} />
+          <Route path="/weekly-battle" exact component={WeeklyBattle} />
+          <Route path="/popular" exact component={Popular} />
+          <Route path="/popular-battle" exact component={PopularBattle} />
+          <Route path="/favorites" exact component={Favorites} />
+
+        </Switch>
+
+      </BrowserRouter>
+
+    )
+  }
 }
 
-export default App;
