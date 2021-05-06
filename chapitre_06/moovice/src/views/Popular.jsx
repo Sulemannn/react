@@ -24,7 +24,7 @@ class Popular extends Component {
     render() {
         return (
             <div>
-                <h1>Popular</h1>
+                <h1 className="text-center">Popular</h1>
 
                 <div className="row">
                     {
