@@ -8,7 +8,8 @@ class Favorites extends Component {
             </div>
         );
     }
-}
+} 
 
 export default Favorites;
+
 
