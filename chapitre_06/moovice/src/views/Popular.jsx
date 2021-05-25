@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Card  from '../views/Card'
+import Card from '../components/Card'
 
 class Popular extends Component {
 
@@ -23,7 +23,7 @@ class Popular extends Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
                 <h1 className="text-center">Popular</h1>
 
                 <div className="row">
@@ -37,6 +37,7 @@ class Popular extends Component {
                         })
                     }
                 </div>
+
 
             </div>
         );
