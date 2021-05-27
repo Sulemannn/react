@@ -1,24 +1,41 @@
 import React, { Component } from 'react'
-import "bootstrap/dist/css/bootstrap.min.css"
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import StudentsList from './views/studentsList'
+import { Switch, Route, BrowserRouter } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+import StudentsList from './views/StudentsList'
+import StudentsAdd from './views/StudentsAdd'
 
 
-class App extends Component {
+export default class App extends Component {
   render() {
+
     return (
 
       <BrowserRouter>
+        <div>
+          <nav>
 
-        <StudentsList></StudentsList>
+            <ul>
 
-        <Switch>
-          <Route exact path="/" />
-          <Route exact path="/students/add" />
-        </Switch>
+              <h2>Simple form</h2>
+            </ul>
+
+          </nav>
+
+          <Switch>
+            <Route path="/" exact>
+              <StudentsList />
+
+            </Route>
+
+            <Route path="students/add" exact>
+              <StudentsAdd />
+            </Route>
+
+          </Switch>
+        </div>
       </BrowserRouter>
 
     )
   }
 }
-export default App

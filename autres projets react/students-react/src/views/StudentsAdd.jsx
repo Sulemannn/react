@@ -6,7 +6,7 @@ const StudentsList = () => {
 
     useEffect(() => {
 
-        const url = "http://localhost:3499/students"
+        const url = "http://localhost:3499/students/add"
 
         axios.get(url)
             .then(response => {
@@ -17,14 +17,8 @@ const StudentsList = () => {
 
     return (
         <div>
-            <h1>Students List</h1>
-            <ul>
-                {
-                    students.map(elem => {
-                        return <li>{elem.name}</li>
-                    })
-                }
-            </ul>
+            <h1>Add students</h1>
+            <input onClick={this.props.onClick}></input>
 
         </div>
     );
