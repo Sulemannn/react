@@ -3,6 +3,7 @@ import Button from './components/Button';
 import Add from './components/Add';
 import List from './components/List';
 import Pay from './components/Pay';
+import Card from './components/Card';
 import "bootstrap/dist/css/bootstrap.min.css"
 
 class App extends React.Component {
@@ -71,6 +72,7 @@ class App extends React.Component {
           <Button onClick={this.selectAdd} isSelected={this.state.activeTabs === 'add' ? true : false}> Add </Button>
           <Button onClick={this.selectList} isSelected={this.state.activeTabs === 'list' ? true : false}> List </Button>
           <Button onClick={this.selectPay} isSelected={this.state.activeTabs === 'pay' ? true : false}> Pay </Button>
+          <Card />
         </div>
 
         {this.renderContent()}

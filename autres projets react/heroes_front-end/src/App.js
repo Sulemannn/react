@@ -18,10 +18,15 @@ export default class App extends Component {
             <ul>
 
               <h1>Heroes Front End</h1>
-              
+
             </ul>
 
           </nav>
+
+          <div>
+              <input></input>
+              <h3>Heroes photos : </h3>
+          </div>
 
           <Switch>
             <Route path="/" exact>

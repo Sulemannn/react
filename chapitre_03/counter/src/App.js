@@ -1,7 +1,8 @@
-import React from 'react'
-import './App.css'
 
-import Counter from './components/Counter.js'
+import React from 'react';
+import './App.css';
+
+import Counter from './components/Counter.jsx'
 
 class App extends React.Component {
 
@@ -56,4 +57,4 @@ class App extends React.Component {
   }
 }
 
-export default App
+export default App;

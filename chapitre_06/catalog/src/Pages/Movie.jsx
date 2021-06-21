@@ -25,9 +25,9 @@ export class Movie extends Component {
             <div>
                 
                 Movies id :
-                {this.props.match.params.id}
+                ({this.props.match.params.id})
 
-                <p>Title : {currentMovie.title}</p>
+                <p>Title : "{currentMovie.title}"</p>
 
 
             </div>

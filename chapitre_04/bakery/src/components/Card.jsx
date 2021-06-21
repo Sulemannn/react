@@ -6,20 +6,23 @@ class Card extends Component {
         super()
 
         this.state = {
-            image: '../../public/images/item.png'
+            image: './images/item.png'
         }
     }
 
     render() {
+
         return (
 
-            <div>
-                <button className='buttonImg'
-                    style={{ backgroundImage: `url(${this.state.image})` }}
-                    onClick={() => this.props.onClick(this.props.itemName, this.props.price)}></button>
-            </div>
-        );
+
+            <button onCLick={() => this.props.onClick(this.props.productName, this.props.price)}>
+                <img style={{width: "30px"}} src={this.state.image} alt="photo png" />
+            </button>
+
+        )
+
     }
 }
+
 
 export default Card;
