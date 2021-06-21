@@ -1,16 +1,16 @@
 import { React, useState, useEffect } from 'react'
 import axios from 'axios'
 
-const HeroesList = () => {
+const HeroesLists = () => {
     const [heroes, setHeroes] = useState([]);
 
     useEffect(() => {
 
-        const url = "http://localhost:3499/heroes/add"
+        const url = "http://localhost:8000/heroes/add"
 
         axios.get(url)
             .then(response => {
-                setStudents(response.data)
+                setHeroes(response.data)
             })
 
     }, []);
@@ -24,4 +24,4 @@ const HeroesList = () => {
     );
 }
 
-export default HeroesList;
+export default HeroesLists;

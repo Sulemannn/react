@@ -1,35 +1,33 @@
-// import { React, useState, useEffect } from 'react'
-// import axios from 'axios'
+import { React, useState, useEffect } from 'react'
+import axios from 'axios'
 
-// const StudentsList = () => {
-//     const [students, setStudents] = useState([]);
+const HeroesAdd = () => {
+    const [heroes, setHeroes] = useState([]);
 
-//     useEffect(() => {
+    useEffect(() => {
 
-//         const url = "http://localhost:3499/students"
+        const url = "http://localhost:8000/heroes"
 
-//         axios.get(url)
-//             .then(response => {
-//                 setStudents(response.data)
-//             })
+        axios.get(url)
+            .then(response => {
+                setHeroes(response.data)
+            })
 
-//     }, []);
+    }, []);
 
-//     return (
-//         <div>
-//             <h1>Students List</h1>
-//             <ul>
-//                 {
-//                     students.map(elem => {
-//                         return <li>{elem.name}</li>
-//                     })
-//                 }
-//             </ul>
+    return (
+        <div>
+            <h1>Students List</h1>
+            <ul>
+                {
+                    students.map(elem => {
+                        return <li>{elem.name}</li>
+                    })
+                }
+            </ul>
 
-//         </div>
-//     );
-// }
+        </div>
+    );
+}
 
-// export default StudentsList;
-
-// not adapted to heroe syet !! 
+export default HeroesAdd;

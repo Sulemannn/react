@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { Switch, Route, BrowserRouter } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-import StudentsList from './views/StudentsList'
-import StudentsAdd from './views/StudentsAdd'
+import HeroesAdd from './views/HeroesAdd'
+import HeroesLists from './views/HeroesLists'
 
 
 export default class App extends Component {
@@ -17,19 +17,20 @@ export default class App extends Component {
 
             <ul>
 
-              <h2>Heroes Front End</h2>
+              <h1>Heroes Front End</h1>
+              
             </ul>
 
           </nav>
 
           <Switch>
             <Route path="/" exact>
-              <StudentsList />
+              <HeroesLists />
 
             </Route>
 
-            <Route path="heroes/add" exact>
-              <StudentsAdd />
+            <Route path="/heroes" exact>
+              <HeroesAdd />
             </Route>
 
           </Switch>
