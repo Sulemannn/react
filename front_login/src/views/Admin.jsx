@@ -3,6 +3,7 @@ import axios from 'axios'
 
 const Admin = () => {
     const [users, setUsers] = useState(null);
+    const [username, setUsername] = useState("");
 
     useEffect(async () => {
         try {
@@ -30,20 +31,35 @@ const Admin = () => {
         );
     } else {
         return (
-            <div>
-                <h3>List of users: </h3>
 
-                <ul>
-                    {
-                        users.map((elem, index) => {
-                            return <li key={index}>{elem.username}</li>
-                        })
-                    }
-                </ul>
+            <div className="row">
+                <div className="offset-3 col-6 mx-auto">
+                    <div className="mb-3 row">
+                        <label htmlFor="username" className="col-sm-2 col-form-label">Prénom</label>
+                        <div className="col-sm-10">
+                            <input type="text" className="form-control" id="username" onChange={(e) => setUsername(e.target.value)} />
+                        </div>
+                    </div>
+                    <div className="mb-3 row">
+                        <label htmlFor="username" className="col-sm-2 col-form-label">Nom</label>
+                        <div className="col-sm-10">
+                            <input type="text" className="form-control" id="username" onChange={(e) => setUsername(e.target.value)} />
+                        </div>
+                    </div>
+
+                    <div className="mb-3 row">
+                        <label htmlFor="username" className="col-sm-2 col-form-label">Age</label>
+                        <div className="col-sm-10">
+                            <input type="text" className="form-control" id="username" onChange={(e) => setUsername(e.target.value)} />
+                        </div>
+                    </div>
+                </div>
 
             </div>
+
         )
     }
 }
+
 
 export default Admin;

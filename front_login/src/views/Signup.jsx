@@ -39,36 +39,49 @@ const Signup = () => {
             <div className="row">
                 <div className="offset-3 col-6 mx-auto">
                     <div className="mb-3 row">
-                        <label htmlFor="text" className="col-sm-2 col-form-label">First Name</label>
+                        <label htmlFor="username" className="col-sm-2 col-form-label">First Name</label>
                         <div className="col-sm-10">
                             <input type="text" className="form-control" id="username" onChange={(e) => setUsername(e.target.value)} />
                         </div>
                     </div>
                     <div className="mb-3 row">
-                        <label htmlFor="text" className="col-sm-2 col-form-label">Surname</label>
+                        <label htmlFor="username" className="col-sm-2 col-form-label">Surname</label>
+                        <div className="col-sm-10">
+                            <input type="text" className="form-control" id="username" onChange={(e) => setUsername(e.target.value)} />
+                        </div>
+                    </div>
+
+                    <div className="mb-3 row">
+                        <label htmlFor="username" className="col-sm-2 col-form-label">Date of birth</label>
+                        <div className="col-sm-10">
+                            <input type="text" className="form-control" id="username" onChange={(e) => setUsername(e.target.value)} />
+                        </div>
+                    </div>
+
+                    <div className="mb-3 row">
+                        <label htmlFor="username" className="col-sm-2 col-form-label">Email</label>
+                        <div className="col-sm-10">
+                            <input type="text" className="form-control" id="username" onChange={(e) => (e.target.value)} />
+                        </div>
+                    </div>
+
+                    <div className="mb-3 row">
+                        <label htmlFor="inputPassword" className="col-sm-2 col-form-label">Password</label>
                         <div className="col-sm-10">
                             <input type="password" className="form-control" id="inputPassword" onChange={(e) => setPassword(e.target.value)} />
                         </div>
                     </div>
                     <div className="mb-3 row">
-                        <label htmlFor="text" className="col-sm-2 col-form-label">Date of birth</label>
+                        <label htmlFor="inputPassword" className="col-sm-2 col-form-label">Confirm Password</label>
                         <div className="col-sm-10">
-                            <input type="text" className="form-control" id="inputRole" onChange={(e) => setRole(e.target.value)} />
+                            <input type="password" className="form-control" id="inputPassword" onChange={(e) => setPassword(e.target.value)} />
                         </div>
                     </div>
 
-                    <div className="mb-3 row">
-                        <button type="submit" className="btn btn-primary mb-3" onClick={signup}>Email</button>
-                    </div>
 
                     <div className="mb-3 row">
-                        <button type="inputPassword" className="btn btn-primary mb-3" onClick={signup}>Password</button>
+                        <button type="submit" className="btn btn-primary mb-3" onClick={signup}>Signup</button>
                     </div>
-
-                    <div className="mb-3 row">
-                        <button type="inputPassword" className="btn btn-primary mb-3" onClick={signup}>Confirm Password</button>
-                    </div>
-
                 </div>
             </div>
         );

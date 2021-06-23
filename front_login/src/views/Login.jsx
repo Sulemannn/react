@@ -33,7 +33,7 @@ const Login = () => {
         <div className="row">
             <div className="offset-3 col-6 mx-auto">
                 <div className="mb-3 row">
-                    <label htmlFor="username" className="col-sm-2 col-form-label">Username</label>
+                    <label htmlFor="username" className="col-sm-2 col-form-label">Email</label>
                     <div className="col-sm-10">
                         <input type="text" className="form-control" id="username" onChange={(e) => setUsername(e.target.value)} />
                     </div>
